@@ -398,14 +398,18 @@ SeparationResult = namedtuple("SeparationResult", ['reflection', 'transmission',
 
 if __name__ == "__main__":
     # Separation from two images
-    input1 = prepare_image('images/input1.jpg')
-    input2 = prepare_image('images/input2.jpg')
-    t = TwoImagesSeparation('input1', 'input2', input1, input2, num_iter=7000)
-    t.optimize()
-    t.finalize()
+    # input1 = prepare_image('images/input1.jpg')
+    # input2 = prepare_image('images/input2.jpg')
+    # t = TwoImagesSeparation('input1', 'input2', input1, input2, num_iter=7000)
+    # t.optimize()
+    # t.finalize()
     # Separation of textures
-    t1 = prepare_image('images/texture12.jpg')
-    t2 = prepare_image('images/texture16.jpg')
-    s = Separation('textures', (t1+t2)/2)
+    # t1 = prepare_image('images/texture12.jpg')
+    # t2 = prepare_image('images/texture16.jpg')
+    # s = Separation('textures', (t1+t2)/2)
+    # s.optimize()
+    # s.finalize()
+    t = prepare_image('images/faces/009_027_frame480.png')
+    s = Separation('fake_test', t)
     s.optimize()
     s.finalize()
